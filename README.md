@@ -30,3 +30,21 @@ longer actively supported or recommended](https://varnish-cache.org/docs/trunk/p
 
 Had I realized this before I started making this example, I would have used Ngnix,
 but the idea should be similar.
+
+## Example
+
+For example, I deployed this (built) container to Heroku and now, by starting the
+server with the command in the [**How?**](#How) section above the server would access
+this proxy rather than `storage.googleapis.com`.  So for example, rather than
+attempting to fetch a partial schema from the usual:
+
+```
+https://storage.googleapis.com/engine-partial-schema-prod/d2d1fb25-31ec-4119-a760-20e2f8328a45/current/v1/implementing-services/greeting-service/6b3956c8b966ee8f6b44d6f584c9d2176b34b98e550d7b5af9eff10ce47b4aec2f79038989e14de497a60d3062f3c42c2a58ddc8d916e513ec8c94268b0f0860.json
+```
+
+It will fetch from:
+
+```
+https://stark-forest-20507.herokuapp.com/engine-partial-schema-prod/d2d1fb25-31ec-4119-a760-20e2f8328a45/current/v1/implementing-services/greeting-service/6b3956c8b966ee8f6b44d6f584c9d2176b34b98e550d7b5af9eff10ce47b4aec2f79038989e14de497a60d3062f3c42c2a58ddc8d916e513ec8c94268b0f0860.json
+```
+

@@ -1,6 +1,12 @@
 # README
 
-### CLI
+## What?
+
+A caching, reverse proxy setup which proxies all of its incoming requests directly
+to `storage.googleapis.com` and will serve "stale" versions in the event that the
+origin is unavailable.
+
+## How?
 
 ```shell
 $ # Change default from https://storage.googleapis.com/engine-partial-schema-prod/

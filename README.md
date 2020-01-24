@@ -14,8 +14,8 @@ infrastructure first, every time.  The local cache will by default re-validate
 against `storage.googleapis.com` on every request.  However, in the event that
 the origin `storage.googleapis.com` becomes unavailable, but the "stale" cached
 artifact (i.e. the last known representation of it), will still be served until
-the maximum time specified in the grace period (defined in the `default.vcl`
-configuration as `beresp.grace`) has elapsed.
+the maximum time specified in [the grace period](https://varnish-cache.org/docs/trunk/users-guide/vcl-grace.html)
+(defined in the `default.vcl` configuration as `beresp.grace`) has elapsed.
 
 Of course, this local container should have a persisted file cache in order to
 survice failures within local infrastructure during an GCS outage.  I thought this
